@@ -9,6 +9,7 @@ USER cowrie
 WORKDIR /cowrie
 RUN git clone http://github.com/cowrie/cowrie
 WORKDIR /cowrie/cowrie/
+RUN cp etc/cowrie.cfg.dist cowrie.cfg
 RUN virtualenv --python=python3 cowrie-env
 RUN ./cowrie-env/bin/pip3 install --upgrade pip
 RUN ./cowrie-env/bin/pip3 install --upgrade -r requirements.txt
